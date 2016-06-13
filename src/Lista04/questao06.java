@@ -21,20 +21,23 @@ public class questao06 {
 		System.out.print("Type coefficient C: ");
 		int c = input.nextInt();
 		
-		int delta  = (b*b)- (4*a*c);
-		float root = 0.0f;
+		double delta  = (b*b)- 4*a*c;
+                
+                System.out.println(delta);
 		
 		if (delta < 0 ){
 			System.out.println("Delta is negative. \nThis equation has no real roots.");
 			System.exit(0);
 		}
 		else if (delta==0){
-			root = ((-b)/(2*a));
+			double root = (double) (-b/(2*a));
 			System.out.println("This Equation has only one root. \nWhich is "+ root);
 		}
-		else {
-			
-			System.out.println("ti");
+		else if (delta > 0){
+			double r1 = (double) ((-b + Math.sqrt(delta))/(2*a));
+                        double r2 = (double) ((-b - Math.sqrt(delta))/(2*a));
+			System.out.println("Delta is positive. \n This equation has two roots: " +r1+
+                                " and " +r2);
 		}
 	}
 
