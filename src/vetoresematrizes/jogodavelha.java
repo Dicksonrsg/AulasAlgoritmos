@@ -9,8 +9,9 @@ public class jogodavelha {
         
         char ttt[][] = new char[9][9];
         
-        char b = 'z';
-        int move = -1, player = 0;
+        char b = 'z', p1 = 'X', p2='O';
+        int move = -1, player = 0, q=0;
+        
         
                 
         System.out.print("This is tic tac toe Game\n"
@@ -33,6 +34,7 @@ public class jogodavelha {
                     player = 2;
                     System.out.print("Player 2, what's your move: ");
                     move = input.nextInt();}
+
                 
                 if (move == 0){
                     if (player == 1){ ttt [1][1] = 'X';}
@@ -83,6 +85,13 @@ public class jogodavelha {
                             System.out.println(ttt[1][1]+"|"+ttt[1][2]+"|"+ttt[1][3]+"\n"
                     + ttt[2][1]+"|"+ttt[2][2]+"|"+ttt[2][3]+"\n"
                     + ttt[3][1]+"|"+ttt[3][2]+"|"+ttt[3][3]+"\n");
+                            
+                                            if (i >4){
+                            for(char[] seeker:ttt){
+                                if( seeker.equals(p1)){ q++; if (q>2){System.out.println("Player "+player+" wins!"); break;}}
+                                
+                            }
+                }
         }
             System.out.println(ttt[1][1]+"|"+ttt[1][2]+"|"+ttt[1][3]+"\n"
                     + ttt[2][1]+"|"+ttt[2][2]+"|"+ttt[2][3]+"\n"
